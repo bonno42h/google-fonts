@@ -47,11 +47,14 @@
     font-size: 14px;
     margin-left: 32px;
     text-transform: uppercase;
+    &:first-of-type a {
+      color: $brand-color
+    }
   }
   li a { 
     text-decoration: none;
-    color: $dark-gray;
     font-weight: 500;
     font-family: "Roboto", sans-serif;
+    color: $dark-gray;
   }
 }
