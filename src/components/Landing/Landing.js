@@ -1,9 +1,12 @@
 import React from 'react';
 import Header from '../Header/Header';
+import styles from './Landing.module.scss';
 
 const Landing = () => {
   return (
-    <Header />
+    <div className={styles.root}>
+      <Header />
+    </div>
   );
 }
 

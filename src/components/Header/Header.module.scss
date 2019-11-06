@@ -1,0 +1,57 @@
+@import '../../styles/variables.scss';
+
+.root { 
+  padding: 0 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 64px;
+}
+
+.headerCorner {
+  position: relative;
+  top: 22px;
+  cursor: pointer;
+}
+
+.googleLogo {
+  opacity: .6;
+}
+
+.fontsText { 
+  opacity: .6;
+  position: relative;
+  top: -6px;
+  left: -5px;
+  font-size: 22.1px;
+  font-family: Arial,Helvetica,sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.navbar { 
+  position: relative;
+  top: 24px;
+  flex: 1;
+  text-align: right;
+  ul {
+    display: inline-flex;
+    flex-direction: row;
+    list-style-type: none;
+  }
+  li {
+    font-size: 14px;
+    margin-left: 32px;
+    text-transform: uppercase;
+  }
+  li a { 
+    text-decoration: none;
+    color: $dark-gray;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+  }
+}
