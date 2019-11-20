@@ -7,12 +7,24 @@ const Grid = () => {
     isLoading: true,
     items: [],
   });
-
+  const [amountToDisplay, setAmountToDisplay] = useState(20);
+  const itemsToDisplay = gridRequest.items.slice(0, amountToDisplay);
+  const increaseAmountToDisplay = () => {
+    setAmountToDisplay(amountToDisplay + 20);
+  };
+  
   useEffect(() => {
     loadFonts({ setGridRequest });
   }, []);
 
   const { isLoading } = gridRequest;
+
+  window.onscroll = function(ev) {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        increaseAmountToDisplay();
+        window.scrollBy(0, -10);
+    }
+};
 
   return (
     <div>
@@ -20,12 +32,11 @@ const Grid = () => {
         <div>Loading data</div>
       )}
 
-      {!isLoading && gridRequest.items.map(item => (
+      {!isLoading && itemsToDisplay.map(item => (
         <Item fontName={item.family} fontLink={item.files.regular} key={item.family} />
       ))}
 
-
-      <button type="button" onClick={() => console.log(gridRequest.items)}>DEBUGGGGG</button>
+      <button type="button" onClick={() => increaseAmountToDisplay()}>DEBUGGGGG</button>
     </div>      
   );
 };
