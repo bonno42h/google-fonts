@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css'
 
-
 const Preview = () => {
+  const [previewText, setPreviewText] = useState("All their equipment and instruments are alive.");
 
   const options = [
     { value: 'sentence', label: 'Sentence' },
@@ -23,7 +23,9 @@ const Preview = () => {
         autoCapitalize="off"
         autoCorrect="off"
         spellCheck="false"
-        placeholder="Types something"
+        placeholder="Type something"
+        value={previewText}
+        onChange={(e) => setPreviewText(e.target.value)}
       />
     </div>
   );
