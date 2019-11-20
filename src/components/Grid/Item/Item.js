@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Context } from '../../Landing';
 import styled from 'styled-components'
 
-
 const Item = ({ fontName, fontLink }) => {
+  const { previewText } = useContext(Context);
   const Card = styled.p`
     @font-face {
       font-family: ${props => props.fontName};
@@ -13,7 +14,7 @@ const Item = ({ fontName, fontLink }) => {
 
   return (
     <Card fontName={fontName} fontLink={fontLink}>
-      testest
+      {previewText}
     </Card>
   );
 }

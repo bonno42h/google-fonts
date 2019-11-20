@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import { Context } from '../../Landing';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css'
 
 const Preview = () => {
-  const [previewText, setPreviewText] = useState("All their equipment and instruments are alive.");
-
+  const { previewText, setPreviewText } = useContext(Context);
   const options = [
     { value: 'sentence', label: 'Sentence' },
     { value: 'alphabet', label: 'Alphabet' },
