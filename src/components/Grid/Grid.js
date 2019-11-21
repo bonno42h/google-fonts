@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { loadFonts } from './Grid.utils';
+import { CardsContainer } from '../../styles/styles';
 import Item from './Item/Item';
 
 const Grid = () => {
@@ -19,7 +20,7 @@ const Grid = () => {
 
   const { isLoading } = gridRequest;
 
-  window.onscroll = function(ev) {
+  window.onscroll = function() {
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
         increaseAmountToDisplay();
         window.scrollBy(0, -10);
@@ -31,12 +32,14 @@ const Grid = () => {
       {isLoading && (
         <div>Loading data</div>
       )}
-
-      {!isLoading && itemsToDisplay.map(item => (
-        <Item fontName={item.family} fontLink={item.files.regular} key={item.family} />
-      ))}
-
       <button type="button" onClick={() => increaseAmountToDisplay()}>DEBUGGGGG</button>
+
+      <CardsContainer>
+        {!isLoading && itemsToDisplay.map(item => (
+          <Item fontName={item.family} fontLink={item.files.regular} key={item.family} />
+        ))}
+      </CardsContainer>
+
     </div>      
   );
 };
