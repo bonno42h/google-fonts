@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { Context } from '../../Landing';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css'
@@ -12,12 +12,39 @@ const Preview = () => {
     { value: 'numerals', label: 'Numerals'}, 
     { value: 'custom', label: 'Custom'}, 
   ];
-    
-  const defaultOption = options[0];
+  const [selectedOption, setSelectedOption] = useState(options[0])
+
+  const updatePreviewText = (selected) => {
+    if (selected.value === 'sentence') {
+      setSelectedOption(options[0]);
+      setPreviewText('All their equipment and instruments are alive.');
+    }
+    if (selected.value === 'alphabet') {
+      setSelectedOption(options[1]);
+      setPreviewText('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ‘?’“!”(%)[#]{@}/&\\<-+÷×=>®©$€£¥¢:;,.*');
+    }
+    if (selected.value === 'paragraph') {
+      setSelectedOption(options[2]);
+      setPreviewText('A peep at some distant orb has power to raise and purify our thoughts like a strain of sacred music, or a noble picture, or a passage from the grander poets. It always does one good.');
+    }
+    if (selected.value === 'numerals') {
+      setSelectedOption(options[3]);
+      setPreviewText('1234567890');
+    }
+    if (selected.value === 'custom') {
+      setSelectedOption(options[4]);
+      setPreviewText('');
+    }
+  }
 
   return (
     <div>
-      <Dropdown options={options} value={defaultOption} placeholder="Select an option" />
+      <Dropdown
+        options={options}
+        value={selectedOption}
+        placeholder="Select an option"
+        onChange={(selected) => updatePreviewText(selected)}  
+      />
       <input
         autoComplete="off"
         autoCapitalize="off"

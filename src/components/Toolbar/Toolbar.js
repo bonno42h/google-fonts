@@ -7,8 +7,8 @@ const Toolbar = () => {
   return (
     <div>
       <input />
-      <Preview />
       <Search />
+      <Preview />
     </div>
   )
 };
