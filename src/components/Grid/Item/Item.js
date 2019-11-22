@@ -11,7 +11,7 @@ const Item = ({ fontName, fontLink }) => {
     margin-bottom: 20px;
     border-top: 1px solid rgba(0,0,0,.4);
     flex: 1;
-    height: 250px;
+    min-height: 250px;
     margin-right: 40px;
   `;
   const CardText = styled.p`
