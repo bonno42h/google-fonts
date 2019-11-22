@@ -1,0 +1,14 @@
+.root {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-start;
+  height:46px;
+  border: 1px solid #dadce0;
+  border-radius: 48px;
+  max-width: 1440px;
+  margin: 0 auto;
+  overflow: visible;
+  right: 0;
+  left: 0;
+}

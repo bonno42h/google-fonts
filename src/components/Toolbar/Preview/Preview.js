@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { Context } from '../../Landing';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css'
+import styles from './Preview.module.scss';
 
 const Preview = () => {
   const { previewText, setPreviewText } = useContext(Context);
@@ -46,6 +47,7 @@ const Preview = () => {
         onChange={(selected) => updatePreviewText(selected)}  
       />
       <input
+        className={styles.input}
         autoComplete="off"
         autoCapitalize="off"
         autoCorrect="off"

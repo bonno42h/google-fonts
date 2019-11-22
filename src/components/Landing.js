@@ -18,7 +18,7 @@ const Landing = () => {
     >
       <Header />
       <Toolbar />
-      <div><ScrollToTop /></div>
+      <ScrollToTop />
       <Grid />
     </Context.Provider>
   );
