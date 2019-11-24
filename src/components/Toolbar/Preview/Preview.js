@@ -39,23 +39,27 @@ const Preview = () => {
   }
 
   return (
-    <div>
+    <div className={styles.root}>
       <Dropdown
+        className={styles.dropdown}
         options={options}
         value={selectedOption}
         placeholder="Select an option"
         onChange={(selected) => updatePreviewText(selected)}  
       />
-      <input
-        className={styles.input}
-        autoComplete="off"
-        autoCapitalize="off"
-        autoCorrect="off"
-        spellCheck="false"
-        placeholder="Type something"
-        value={previewText}
-        onChange={(e) => setPreviewText(e.target.value)}
-      />
+      <div className={styles.inputWrapper}>
+        <input
+          className={styles.input}
+          autoComplete="off"
+          autoCapitalize="off"
+          autoCorrect="off"
+          spellCheck="false"
+          placeholder="Type something"
+          value={previewText}
+          onChange={(e) => setPreviewText(e.target.value)}
+        />
+
+      </div>
     </div>
   );
 };
