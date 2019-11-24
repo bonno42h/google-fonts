@@ -8,12 +8,15 @@ export const Context = createContext();
 
 const Landing = () => {
   const [previewText, setPreviewText] = useState("All their equipment and instruments are alive.");
+  const [fontSize, setFontSize] = useState(40);
 
   return (
     <Context.Provider
       value={{
         previewText: previewText,
         setPreviewText: setPreviewText,
+        fontSize: fontSize,
+        setFontSize: setFontSize,
       }}
     >
       <Header />

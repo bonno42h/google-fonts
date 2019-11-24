@@ -1,8 +1,16 @@
-import React from 'react';
-import Dropdown from 'react-dropdown';
+import React, { useContext } from 'react';
+import Dropdown from '../../../utils/Dropdown/Dropdown';
+import { Context } from '../../Landing';
 
 const FontSize = () => {
-  return <Dropdown />;
+  const { fontSize, setFontSize } = useContext(Context);
+  const options = [
+    { value: '20px', label: '20px' },
+    { value: '24px', label: '24px' },
+    { value: '32px', label: '32px'}, 
+    { value: '40px', label: '40px'}, 
+  ];
+  return <Dropdown items={options} selectedOption={fontSize} setOption={setFontSize} />;
 };
 
 export default FontSize;

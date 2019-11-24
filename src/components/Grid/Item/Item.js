@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 
 const Item = ({ fontName, fontLink }) => {
-  const { previewText } = useContext(Context);
+  const { previewText, fontSize } = useContext(Context);
   const CardContainer = styled.div`
     min-width: 330px;
     max-width: 330px;
@@ -23,7 +23,7 @@ const Item = ({ fontName, fontLink }) => {
     [contenteditable]:focus {
       outline: 0px solid transparent;
     }
-    font-size: 24px;
+    font-size: ${fontSize};
   `;
   const CardTitle = styled.h1`
     color: rgba(0,0,0,.6);
