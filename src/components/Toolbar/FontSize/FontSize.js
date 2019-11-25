@@ -15,7 +15,7 @@ const FontSize = () => {
     <div className={styles.root}>
       <Dropdown
         items={options}
-        selectedOption={fontSize}
+        selectedOption={fontSize.label}
         setOption={setFontSize}
         width={80}  
       />

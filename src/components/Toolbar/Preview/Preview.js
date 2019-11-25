@@ -20,7 +20,7 @@ const Preview = () => {
         <Dropdown
           items={options}
           width={120}
-          selectedOption={options.find(e => e.value === previewText).label}
+          selectedOption={previewText.label}
           placeholder="Select an option"
           setOption={setPreviewText} 
         />
@@ -33,8 +33,11 @@ const Preview = () => {
           autoCorrect="off"
           spellCheck="false"
           placeholder="Type something"
-          value={previewText}
-          onChange={(e) => setPreviewText(e.target.value)}
+          value={previewText.value}
+          onChange={(e) => setPreviewText({
+            label: previewText.label,
+            value: e.target.value,
+          })}
         />
 
       </div>

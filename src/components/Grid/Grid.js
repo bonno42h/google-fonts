@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { loadFonts } from './Grid.utils';
 import { CardsContainer } from '../../styles/styles';
+import styles from './Grid.module.scss';
 import Item from './Item/Item';
 
 const Grid = () => {
@@ -28,11 +29,10 @@ const Grid = () => {
 };
 
   return (
-    <div>
-      {isLoading && (
-        <div>Loading data</div>
-      )}
-      <button type="button" onClick={() => increaseAmountToDisplay()}>DEBUGGGGG</button>
+    <div className={styles.root}>
+     {isLoading && (
+       <div className={styles.loader}></div>
+     )}
 
       <CardsContainer>
         {!isLoading && itemsToDisplay.map(item => (

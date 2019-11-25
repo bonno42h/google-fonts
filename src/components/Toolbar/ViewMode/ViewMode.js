@@ -4,7 +4,7 @@ import ListIcon from '../../../assets/list.png';
 
 
 const ViewMode = () => {
-  const [isSelectedListMode, setIsSelectedViewMode] = useState(false);
+  // const [isSelectedListMode, setIsSelectedViewMode] = useState(false);
   return (
     <div className={styles.root}>
       <img className={styles.icon} alt="Toggle View Mode" src={ListIcon} />

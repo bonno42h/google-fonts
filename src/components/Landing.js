@@ -7,8 +7,11 @@ import ScrollToTop from './ScrollToTop/ScrollToTop';
 export const Context = createContext();
 
 const Landing = () => {
-  const [previewText, setPreviewText] = useState("All their equipment and instruments are alive.");
-  const [fontSize, setFontSize] = useState('32px');
+  const [previewText, setPreviewText] = useState({
+    value: "All their equipment and instruments are alive.",
+    label: "Sentence"
+  });
+  const [fontSize, setFontSize] = useState({value: '32px', label: '32px'});
 
   return (
     <Context.Provider

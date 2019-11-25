@@ -18,13 +18,13 @@ const Dropdown = ({ items, selectedOption, setOption, width ="200" }) => {
   };
   
       return (
-          <div className={styles.dropdown} style = {{width:`${width}px`}} >
+          <div className={styles.dropdown} style ={{width:`${width}px`}} >
            <div className={styles.button} onClick={showDropdownMenu}>{selectedOption}</div>
   
             { displayState ? (
             <ul>
               {items.map(item => (
-                <li key={item.value} onClick={() => setOption(item.value)}>{item.label}</li>
+                <li key={item.value} onClick={() => setOption({value: item.value, label: item.label})}>{item.label}</li>
               ))}
             </ul>
           ):

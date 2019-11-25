@@ -23,7 +23,7 @@ const Item = ({ fontName, fontLink }) => {
     [contenteditable]:focus {
       outline: 0px solid transparent;
     }
-    font-size: ${fontSize};
+    font-size: ${fontSize.value};
   `;
   const CardTitle = styled.h1`
     color: rgba(0,0,0,.6);
@@ -72,7 +72,7 @@ const Item = ({ fontName, fontLink }) => {
       <CardTitle>{fontName}</CardTitle>
       <CardSubtitle>Author of the font</CardSubtitle>
       <CardText fontName={fontName} fontLink={fontLink}>
-        <span contentEditable={true}>{previewText}</span>
+        <span contentEditable={true}>{previewText.value}</span>
       </CardText>
 
     </CardContainer>
