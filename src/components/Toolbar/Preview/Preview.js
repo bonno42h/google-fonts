@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { Context } from '../../Landing';
 import Dropdown from '../../../utils/Dropdown/Dropdown';
-import 'react-dropdown/style.css'
 import styles from './Preview.module.scss';
 
 const Preview = () => {
