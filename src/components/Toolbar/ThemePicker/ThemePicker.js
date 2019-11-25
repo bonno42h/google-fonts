@@ -3,7 +3,7 @@ import styles from './ThemePicker.module.scss';
 
 const ThemePicker = () => {
   return (
-    <div>
+    <div className={styles.root}>
       <div className={styles.white} />
       <div className={styles.dark} />
     </div>

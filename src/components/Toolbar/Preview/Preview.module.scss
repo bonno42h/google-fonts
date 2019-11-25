@@ -2,26 +2,23 @@
   flex: 1;
   flex-direction: row;
   justify-content: flex-start;
-  // margin: 0 auto;
   align-items: stretch;
   border-right: 1px solid #dadce0;
-  max-width: 650px;
 }
 
 .inputWrapper {
-  margin: 0;
   padding: 2px 16px 2px 7px;
   min-width: 100px;
-  width: 100%;
   margin-left: 12px;
+  display: inline-block;
 }
 
 .input {
+  display: inline-block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   width: 100%;
-  max-width: 500px;
   font-family: Roboto, sans-serif;
   font-size: 15px;
   font-weight: 400;
@@ -33,7 +30,7 @@
   border-width: 0 0 1px 0;
   line-height: 26px;
   height: 30px;
-  float: left;
+  outline: none;
 }
 
 .dropdown {
