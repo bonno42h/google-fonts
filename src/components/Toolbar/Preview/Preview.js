@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { Context } from '../../Landing';
 import Dropdown from '../../../utils/Dropdown/Dropdown';
 import 'react-dropdown/style.css'
@@ -16,13 +16,15 @@ const Preview = () => {
 
   return (
     <div className={styles.root}>
-      <Dropdown
-        items={options}
-        width={120}
-        selectedOption={options.find(e => e.value === previewText).label}
-        placeholder="Select an option"
-        setOption={setPreviewText} 
-      />
+      <div className={styles.dropdownWrapper}>
+        <Dropdown
+          items={options}
+          width={120}
+          selectedOption={options.find(e => e.value === previewText).label}
+          placeholder="Select an option"
+          setOption={setPreviewText} 
+        />
+      </div>
       <div className={styles.inputWrapper}>
         <input
           className={styles.input}

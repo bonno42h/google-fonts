@@ -1,24 +1,27 @@
 .root {
-  flex: 1;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: stretch;
   border-right: 1px solid #dadce0;
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
+}
+.dropdownWrapper {
+  display: inline-block;
+  width: 100px;
 }
 
 .inputWrapper {
   padding: 2px 16px 2px 7px;
   min-width: 100px;
-  margin-left: 12px;
+  margin-left: 19px;
   display: inline-block;
+  width: 100%;
 }
 
 .input {
-  display: inline-block;
+  width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 100%;
   font-family: Roboto, sans-serif;
   font-size: 15px;
   font-weight: 400;
@@ -31,6 +34,7 @@
   line-height: 26px;
   height: 30px;
   outline: none;
+  width: 100%;
 }
 
 .dropdown {
