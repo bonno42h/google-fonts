@@ -2,6 +2,8 @@
 
 ### React based clone of Google Fonts
 
+Deployed application link: https://google-fonts-clone.herokuapp.com/
+
 ## Features involved: 
 * Infinite scroll;
 * Display text based on input value;
