@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Context } from '../Landing';
 import styled from 'styled-components'
 
-
-
 const ScrollToTop = () => {
+  const { selectedTheme } = useContext(Context);
   const UpButton = styled.div`
     box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
     align-items: center;
@@ -19,6 +19,7 @@ const ScrollToTop = () => {
     transition: box-shadow .3s cubic-bezier(0.55,0,0.55,0.2);
     bottom: 60px;
     transform: translateX(-100%);
+    ${selectedTheme === 'dark' ? 'filter: invert(100%);' : ''}
   `;
 
   const handleClick = () => {

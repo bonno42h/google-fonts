@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 
 const Item = ({ fontName, fontLink }) => {
-  const { previewText, fontSize } = useContext(Context);
+  const { previewText, fontSize, selectedTheme } = useContext(Context);
   const CardContainer = styled.div`
     min-width: 330px;
     max-width: 330px;
@@ -13,6 +13,7 @@ const Item = ({ fontName, fontLink }) => {
     flex: 1;
     min-height: 250px;
     margin-right: 40px;
+    ${selectedTheme === 'dark' ? 'filter: invert(100%);' : ''}
   `;
   const CardText = styled.p`
     @font-face {
@@ -53,10 +54,10 @@ const Item = ({ fontName, fontLink }) => {
     color: white;
     cursor: pointer;
     border-radius: 50%;
-    background: #ff5252;
+    ${selectedTheme === 'dark' ? 'background: #00ADAD' : 'background: #ff5252'}
     border-width: 1px;
     border-style: solid;
-    border-color: #ff5252;
+    ${selectedTheme === 'dark' ? 'border-color: #00ADAD' : 'border-color: #ff5252'}
     border-image: initial;
     text-align: center;
     display: inline-block;

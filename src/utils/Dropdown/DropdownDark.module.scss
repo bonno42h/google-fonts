@@ -1,0 +1,53 @@
+.dropdown {
+  position: relative;
+  display: inline-block;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    top:45px;
+    right:0px;
+    width: 105px;
+    background-color: #000;
+    font-weight:bold;
+    position: absolute;
+    box-shadow: 0px 8px 16px 0px rgba(255, 255, 255, 0.2);
+    z-index: 1;
+  }
+  li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  li {
+    color: #fff;
+    padding: 8px 16px;
+    border-bottom: 1px solid #fff;
+    &:last-child {
+      border-bottom: none;
+    }
+    &:hover {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+}
+
+.button{
+  min-width: 60px;
+  height:18px;
+  width: 40px;
+  padding:12px;
+  border-radius:5px;
+  font-weight:bold;
+  color: #fff;
+}
+.button:before{
+  content:"";
+  position:absolute;
+  width:0px;
+  height:0px;
+  border: 10px solid;
+  border-color: #fff transparent transparent transparent;
+  right:6px;
+  top:18px;
+}

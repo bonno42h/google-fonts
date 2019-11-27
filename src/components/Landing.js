@@ -3,6 +3,8 @@ import Header from './Header/Header';
 import Toolbar from './Toolbar/Toolbar';
 import Grid from './Grid/Grid';
 import ScrollToTop from './ScrollToTop/ScrollToTop';
+import whiteStyles from './Landing.module.scss';
+import darkStyles from './LandingDark.module.scss';
 
 export const Context = createContext();
 
@@ -13,6 +15,9 @@ const Landing = () => {
   });
   const [fontSize, setFontSize] = useState({value: '32px', label: '32px'});
   const [searchValue, setSearchValue] = useState('');
+  const [selectedTheme, setSelectedTheme] = useState('white');
+
+  const styles = selectedTheme === 'white' ? whiteStyles : darkStyles;
 
   return (
     <Context.Provider
@@ -23,12 +28,16 @@ const Landing = () => {
         setFontSize: setFontSize,
         searchValue: searchValue,
         setSearchValue: setSearchValue,
+        selectedTheme: selectedTheme,
+        setSelectedTheme: setSelectedTheme,
       }}
     >
-      <Header />
-      <Toolbar />
-      <ScrollToTop />
-      <Grid />
+      <div className={styles.root}>
+        <Header />
+        <Toolbar />
+        <ScrollToTop />
+        <Grid />
+      </div>
     </Context.Provider>
   );
 }

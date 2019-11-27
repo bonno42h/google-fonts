@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
 import { Context } from '../../Landing';
 import Dropdown from '../../../utils/Dropdown/Dropdown';
-import styles from './Preview.module.scss';
+import whiteStyles from './Preview.module.scss';
+import darkStyles from './PreviewDark.module.scss';
 
 const Preview = () => {
-  const { previewText, setPreviewText } = useContext(Context);
+  const { previewText, setPreviewText, selectedTheme } = useContext(Context);
+  const styles = selectedTheme === 'white' ? whiteStyles : darkStyles;
   const options = [
     { value: 'All their equipment and instruments are alive.', label: 'Sentence' },
     { value: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ‘?’“!”(%)[#]{@}/&\\<-+÷×=>®©$€£¥¢:;,.*', label: 'Alphabet' },

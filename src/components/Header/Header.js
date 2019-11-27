@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Context } from '../Landing';
 import GoogleLogo from '../../assets/google-logo.png';
-import styles from './Header.module.scss';
+import whiteStyles from './Header.module.scss';
+import darkStyles from './HeaderDark.module.scss';
 
 const Header = () => {
+  const { selectedTheme } = useContext(Context);
+  const styles = selectedTheme === 'white' ? whiteStyles : darkStyles;
   return (
     <header className={styles.root}>
       <div className={styles.headerCorner}>

@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
-import styles from './Dropdown.module.scss';
+import React, { useState, useContext } from 'react';
+import { Context } from '../../components/Landing';
+import whiteStyles from './Dropdown.module.scss';
+import darkStyles from './DropdownDark.module.scss';
 
 const Dropdown = ({ items, selectedOption, setOption, width ="200" }) => {
+  const { selectedTheme } = useContext(Context);
   const [displayState, setDisplayState] = useState(false);
   
   const showDropdownMenu = (event) => {
@@ -16,7 +19,9 @@ const Dropdown = ({ items, selectedOption, setOption, width ="200" }) => {
     setDisplayState(false);
       document.removeEventListener('click', hideDropdownMenu);
   };
-  
+
+  const styles = selectedTheme === 'white' ? whiteStyles : darkStyles;
+
       return (
           <div className={styles.dropdown} style ={{width:`${width}px`}} >
            <div className={styles.button} onClick={showDropdownMenu}>{selectedOption}</div>
