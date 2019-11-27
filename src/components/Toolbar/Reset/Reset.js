@@ -4,11 +4,12 @@ import whiteStyles from './Reset.module.scss';
 import darkStyles from './ResetDark.module.scss';
 
 const Reset = () => {  
-  const { setFontSize, setPreviewText, selectedTheme } = useContext(Context);
+  const { setFontSize, setPreviewText, selectedTheme, setSelectedTheme } = useContext(Context);
   const styles = selectedTheme === 'white' ? whiteStyles : darkStyles;
   const handleReset = () => {
     setFontSize({ value: '32px', label: '32px' });
     setPreviewText({ label: 'Sentence', value: 'All their equipment and instruments are alive.' });
+    setSelectedTheme('white');
   };
   return (
     <button className={styles.resetButton} onClick={handleReset}>
