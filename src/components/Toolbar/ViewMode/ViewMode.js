@@ -6,13 +6,15 @@ import ListIcon from '../../../assets/list.png';
 
 
 const ViewMode = () => {
-  const { selectedTheme } = useContext(Context);
+  const { selectedTheme, viewMode, setViewMode } = useContext(Context);
   const styles = selectedTheme === 'white' ? whiteStyles : darkStyles;
 
   // const [isSelectedListMode, setIsSelectedViewMode] = useState(false);
   return (
     <div className={styles.root}>
-      <img className={styles.icon} alt="Toggle View Mode" src={ListIcon} />
+      <img className={styles.icon} alt="Toggle View Mode" src={ListIcon}
+        onClick={() => setViewMode(viewMode === 'grid' ? 'list': 'grid')}
+      />
     </div>
   );
 };

@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, Fragment } from 'react';
 import { Context } from '../../Landing';
 import styled from 'styled-components'
 
 
 const Item = ({ fontName, fontLink }) => {
-  const { previewText, fontSize, selectedTheme } = useContext(Context);
+  const { previewText, fontSize, selectedTheme, viewMode } = useContext(Context);
   const CardContainer = styled.div`
     min-width: 330px;
     max-width: 330px;
@@ -66,17 +66,39 @@ const Item = ({ fontName, fontLink }) => {
     top: 10px;
     right: 10px;
   `;
+  const ListContainer = styled.div`
+    width: 100%;
+    ${selectedTheme === 'dark' ? 'filter: invert(100%);' : ''}
+  `;
+  const ListTitle = styled.h1`
+    margin-top: 12px;
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+  `;
 
   return (
-    <CardContainer>
-      <AddButton>+</AddButton>
-      <CardTitle>{fontName}</CardTitle>
-      <CardSubtitle>Author of the font</CardSubtitle>
-      <CardText fontName={fontName} fontLink={fontLink}>
-        <span contentEditable={true}>{previewText.value}</span>
-      </CardText>
-
-    </CardContainer>
+    <Fragment>
+      {viewMode === 'grid' && (
+        <CardContainer>
+          <AddButton>+</AddButton>
+          <CardTitle>{fontName}</CardTitle>
+          <CardSubtitle>Author of the font</CardSubtitle>
+          <CardText fontName={fontName} fontLink={fontLink}>
+            <span contentEditable={true}>{previewText.value}</span>
+          </CardText>
+        </CardContainer>
+      )}
+      {viewMode === 'list' && (
+        <ListContainer>
+          <ListTitle>{fontName}</ListTitle>
+          <CardText fontName={fontName} fontLink={fontLink}>
+            <span contentEditable={true}>{previewText.value}</span>
+          </CardText>
+        </ListContainer>
+      )}
+    </Fragment>
   );
 }
 export default Item;

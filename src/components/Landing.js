@@ -16,6 +16,7 @@ const Landing = () => {
   const [fontSize, setFontSize] = useState({value: '32px', label: '32px'});
   const [searchValue, setSearchValue] = useState('');
   const [selectedTheme, setSelectedTheme] = useState('white');
+  const [viewMode, setViewMode] = useState('grid');
 
   const styles = selectedTheme === 'white' ? whiteStyles : darkStyles;
 
@@ -30,6 +31,8 @@ const Landing = () => {
         setSearchValue: setSearchValue,
         selectedTheme: selectedTheme,
         setSelectedTheme: setSelectedTheme,
+        viewMode: viewMode,
+        setViewMode: setViewMode,
       }}
     >
       <div className={styles.root}>
