@@ -12,6 +12,7 @@ const Landing = () => {
     label: "Sentence"
   });
   const [fontSize, setFontSize] = useState({value: '32px', label: '32px'});
+  const [searchValue, setSearchValue] = useState('');
 
   return (
     <Context.Provider
@@ -20,6 +21,8 @@ const Landing = () => {
         setPreviewText: setPreviewText,
         fontSize: fontSize,
         setFontSize: setFontSize,
+        searchValue: searchValue,
+        setSearchValue: setSearchValue,
       }}
     >
       <Header />
