@@ -8,6 +8,7 @@
 * Text mode dropdown (paragraph/sentence/etc);
 * Font size dropdown;
 * Font search - search for specific fonts;
+* Theme Changer - toggle to enable dark mode;
 
 ## Front-end technologies used: 
 * React 16.11.0 - Front-end framework;
@@ -16,6 +17,5 @@
 * styled components - visual primitives for the component age. Styled components;
 
 ## To be added:
-* Theme Changer - toggle to enable dark mode;
-* List view mode - toggle between list and grid views;
+* List view mode - toggle between list and grid views (in progress);
 * Add fonts - add fonts to modal for importing one to your own project;
