@@ -8,13 +8,12 @@ export const loadFonts = async ({ setGridRequest }) => {
   try {
     const { data } = await getFonts();
 
-    console.log(data.items);
     setGridRequest({
       isLoading: false,
       items: data.items,
     });
   } catch (error) {
-    console.log(error);
+    throw error;
   }
 
 };

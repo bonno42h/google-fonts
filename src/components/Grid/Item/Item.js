@@ -89,7 +89,7 @@ const Item = ({ fontName, fontLink }) => {
           <CardTitle>{fontName}</CardTitle>
           <CardSubtitle>Author of the font</CardSubtitle>
           <CardText fontName={fontName} fontLink={fontLink.replace("http", "https")}>
-            <span contentEditable={true}>{previewText.value}</span>
+            <span suppressContentEditableWarning={true} contentEditable={true}>{previewText.value}</span>
           </CardText>
         </CardContainer>
       )}
