@@ -68,6 +68,7 @@ const Item = ({ fontName, fontLink }) => {
   `;
   const ListContainer = styled.div`
     width: 100%;
+    border-top: 1px solid black;
     ${selectedTheme === 'dark' ? 'filter: invert(100%);' : ''}
   `;
   const ListTitle = styled.h1`
@@ -76,6 +77,8 @@ const Item = ({ fontName, fontLink }) => {
     font-size: 14px;
     font-weight: 500;
     line-height: 20px;
+    font-family: Roboto, Helvetica, sans-serif;
+
   `;
 
   return (
@@ -85,7 +88,7 @@ const Item = ({ fontName, fontLink }) => {
           <AddButton>+</AddButton>
           <CardTitle>{fontName}</CardTitle>
           <CardSubtitle>Author of the font</CardSubtitle>
-          <CardText fontName={fontName} fontLink={fontLink}>
+          <CardText fontName={fontName} fontLink={fontLink.replace("http", "https")}>
             <span contentEditable={true}>{previewText.value}</span>
           </CardText>
         </CardContainer>
