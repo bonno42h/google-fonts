@@ -11,6 +11,8 @@ Deployed application link: https://google-fonts-clone.herokuapp.com/
 * Font size dropdown;
 * Font search - search for specific fonts;
 * Theme Changer - toggle to enable dark mode;
+* List view mode - toggle between list and grid views;
+
 
 ## Front-end technologies used: 
 * React 16.11.0 - Front-end framework;
@@ -19,5 +21,4 @@ Deployed application link: https://google-fonts-clone.herokuapp.com/
 * styled components - visual primitives for the component age. Styled components;
 
 ## To be added:
-* List view mode - toggle between list and grid views (in progress);
 * Add fonts - add fonts to modal for importing one to your own project;
